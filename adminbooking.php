@@ -122,10 +122,6 @@ $flight_number = $_REQUEST["rflightnumber"];
 $time = $_REQUEST["rtime"];
 
 try {
-    // $host = 'localhost';
-    // $dbname = 'airlines';
-    // $conn = new PDO("mysql:host=$host;dbname=$dbname","root","Madurai@123");
-
     $query = "SELECT * FROM booking WHERE flight_number = ? AND flight_time = ?";
     $stmt = $conn->prepare($query);
     $stmt->execute([$flight_number, $time]);

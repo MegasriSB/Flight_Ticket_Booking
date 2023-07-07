@@ -132,10 +132,6 @@
     $saveBookingStmt = null;
 
     try {
-        // $host = 'localhost';
-        // $dbname = 'airlines';
-        // $conn = new PDO("mysql:host=$host;dbname=$dbname","root","Madurai@123");
-
         $checkAvailabilityQuery = "SELECT * FROM flights WHERE flight_number = ? and flight_date = ? and flight_time = ?";
         $checkAvailabilityStmt = $conn->prepare($checkAvailabilityQuery);
         $checkAvailabilityStmt->bindParam(1, $flight_number);

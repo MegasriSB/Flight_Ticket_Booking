@@ -93,10 +93,6 @@ $date = $_REQUEST["rdate"];
 $time = $_REQUEST["rtime"];
 
 try {
-    // $host = 'localhost';
-    // $dbname = 'airlines';
-    // $conn = new PDO("mysql:host=$host;dbname=$dbname","root","Madurai@123");
-
     $query = "DELETE FROM flights WHERE flight_number = ? AND airline = ? AND flight_date = ? AND flight_time = ?";
     $stmt = $conn->prepare($query);
     $stmt->execute([$flight_number, $airline, $date, $time]);

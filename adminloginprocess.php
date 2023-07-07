@@ -4,10 +4,6 @@ $adminemail = $_REQUEST["rusername"];
 $password = $_REQUEST["rpassword"];
 
 try {
-    // $host = 'localhost';
-    // $dbname = 'airlines';
-    // $conn = new PDO("mysql:host=$host;dbname=$dbname","root","Madurai@123");
-
     $stmt = $conn->prepare("SELECT * FROM admin WHERE email = ? AND password = ?");
     $stmt->bindParam(1, $adminemail);
     $stmt->bindParam(2, $password);

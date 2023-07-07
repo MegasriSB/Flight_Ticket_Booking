@@ -99,10 +99,6 @@
     $fare = intval($_REQUEST["rfare"]);
 
     try {
-        // $host = 'localhost';
-        // $dbname = 'airlines';
-        // $conn = new PDO("mysql:host=$host;dbname=$dbname","root","Madurai@123");
-
         $query = "INSERT INTO flights (flight_number, airline, flight_date, flight_time, source, destination, duration, capacity, available_seats, fare) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($query);
         $stmt->execute([$flight_number, $airline, $date, $time, $source, $destination, $duration, $capacity, $seat, $fare]);

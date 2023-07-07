@@ -174,9 +174,6 @@
   $date = $_REQUEST["rdate"];
   $time = $_REQUEST["rtime"];
     try{
-        // $host = 'localhost';
-        // $dbname = 'airlines';
-        // $conn = new PDO("mysql:host=$host;dbname=$dbname","root","Madurai@123");
         $stmt = $conn->prepare("SELECT * FROM flights WHERE flight_number = ? AND flight_date = ? AND flight_time = ?"); 
         $stmt->bindParam(1, $flight_number);
         $stmt->bindParam(2, $date);

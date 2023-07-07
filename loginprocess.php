@@ -4,9 +4,6 @@ $email = $_REQUEST["rusername"];
 $password = $_REQUEST["rpassword"];
 
 try {
-    // $host = 'localhost';
-    // $dbname = 'airlines';
-    // $conn = new PDO("mysql:host=$host;dbname=$dbname","root","Madurai@123");
     $stmt = $conn->prepare("SELECT name FROM reg_user WHERE email = ? AND password = ?");
     $stmt->execute([$email, $password]);
     $result = $stmt->fetch();
